@@ -1,8 +1,9 @@
 <#import "commons.ftlh" as c>
+<#import "/spring.ftl" as spring/>
 
 <@c.page>
     <div class="text">
-        Если у Вас есть аккаунт нажмите <a href="/enter">Войти</a>
+        Если у Вас есть аккаунт нажмите <a href="<@spring.url '/enter'/>">Войти</a>
     </div>
     <div class="enterform">
         <div class="title">
@@ -42,7 +43,8 @@
                         Подтвердите пароль
                     </div>
                     <div class="inp">
-                        <input name="passwordConfirm" type="password" autocomplete="off" value="${registerForm.passwordConfirm!}"/>
+                        <input name="passwordConfirm" type="password" autocomplete="off"
+                               value="${registerForm.passwordConfirm!}"/>
                     </div>
                     <@c.error "registerForm.passwordConfirm"/>
                 </div>

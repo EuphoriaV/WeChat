@@ -11,17 +11,17 @@
     </head>
     <body>
     <header>
-        <img src="img/logo.png" alt="WeChat">
+        <img src="<@spring.url '/img/logo.png'/>" alt="WeChat">
         <label>WeChat</label>
         <#if ! user??>
             <div class="buttons">
-                <a href="/enter">Войти</a>
-                <a href="/register">Зарегистрироваться</a>
+                <a href="<@spring.url '/enter'/>">Войти</a>
+                <a href="<@spring.url '/register'/>">Зарегистрироваться</a>
             </div>
         <#else>
             <div class="buttons">
-                <a href="/logout">Выйти</a>
-                <a href="/user/${user.login}">${user.name}</a>
+                <a href="<@spring.url '/logout'/>">Выйти</a>
+                <a href="<@spring.url '/'/>">${user.name}</a>
             </div>
         </#if>
     </header>

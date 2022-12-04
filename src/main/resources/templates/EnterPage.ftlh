@@ -1,8 +1,9 @@
 <#import "commons.ftlh" as c>
+<#import "/spring.ftl" as spring/>
 
 <@c.page>
     <div class="text">
-        Если у Вас нет аккаунта нажмите <a href="/register">Зарегистрироваться</a>
+        Если у Вас нет аккаунта нажмите <a href="<@spring.url '/register'/>">Зарегистрироваться</a>
     </div>
     <div class="enterform">
         <div class="title">
