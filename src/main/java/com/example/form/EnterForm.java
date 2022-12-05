@@ -14,7 +14,6 @@ public class EnterForm {
     @Size(min = 4, max = 30)
     private String password;
 
-
     public String getLogin() {
         return login;
     }

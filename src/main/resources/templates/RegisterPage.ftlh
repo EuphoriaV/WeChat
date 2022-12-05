@@ -2,12 +2,9 @@
 <#import "/spring.ftl" as spring/>
 
 <@c.page>
-    <div class="text">
-        Если у Вас есть аккаунт нажмите <a href="<@spring.url '/enter'/>">Войти</a>
-    </div>
     <div class="enterform">
         <div class="title">
-            Авторизация
+            Регистрация
         </div>
         <form method="post">
             <div class="box">

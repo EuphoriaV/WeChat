@@ -1,9 +1,9 @@
 package com.example.service;
 
 import com.example.domain.User;
-import org.springframework.stereotype.Service;
 import com.example.form.RegisterForm;
 import com.example.repository.UserRepository;
+import org.springframework.stereotype.Service;
 
 @Service
 public class UserService {
@@ -15,7 +15,6 @@ public class UserService {
 
     public boolean isLoginVacant(String login) {
         return !userRepository.existsByLogin(login);
-
     }
 
     public User register(RegisterForm registerForm) {

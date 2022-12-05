@@ -11,7 +11,7 @@
     </head>
     <body>
     <header>
-        <img src="<@spring.url '/img/logo.png'/>" alt="WeChat">
+        <a href="<@spring.url '/chats'/>"><img src="<@spring.url '/img/logo.png'/>" alt="WeChat"></a>
         <label>WeChat</label>
         <#if ! user??>
             <div class="buttons">
@@ -21,7 +21,7 @@
         <#else>
             <div class="buttons">
                 <a href="<@spring.url '/logout'/>">Выйти</a>
-                <a href="<@spring.url '/'/>">${user.name}</a>
+                <a href="<@spring.url '/chats'/>">${user.name}</a>
             </div>
         </#if>
     </header>

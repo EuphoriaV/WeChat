@@ -1,5 +1,6 @@
 package com.example.controller;
 
+import com.example.form.EnterForm;
 import com.example.form.validator.EnterFormValidator;
 import com.example.service.UserService;
 import org.springframework.stereotype.Controller;
@@ -10,13 +11,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import com.example.form.EnterForm;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 @Controller
-public class EnterPage extends Page{
+public class EnterPage extends Page {
     private final UserService userService;
     private final EnterFormValidator enterFormValidator;
 
