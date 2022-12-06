@@ -36,12 +36,15 @@ header label {
     font-family: "Verdana", sans-serif;
 }
 
-a {
+.chats a {
     text-decoration: none;
-    color: var(--cyan);
+    color: white;
 }
 
 header .buttons a {
+    color: var(--dark-blue);
+    text-decoration: none;
+    background: var(--cyan);
     font: 1rem bold;
     margin: 1rem;
     font-family: "Verdana", sans-serif;
@@ -69,7 +72,7 @@ main .enterform .title {
     border-bottom: var(--border1);
 }
 
-main .enterform .box{
+main .enterform .box {
     background: var(--blue);
     border: var(--blue) 2px solid;
     border-radius: 10px;
@@ -105,6 +108,7 @@ main .enterform input:focus {
 
 main .enterform input[type=submit] {
     background: var(--cyan);
+    color: var(--dark-blue);
     outline: none;
     margin: 2rem 12.5rem;
     font-size: 1.5rem;
@@ -117,7 +121,7 @@ main .enterform input[type=submit] {
     color: red;
 }
 
-.chat {
+.chatbox {
     border: var(--border1);
     border-radius: 30px;
     width: 50rem;
@@ -218,15 +222,13 @@ textarea::-webkit-scrollbar-track {
 
 .send input[type=submit] {
     background: var(--cyan);
+    color: var(--dark-blue);
     outline: none;
     margin: 1rem 3rem;
     font-size: 1.5rem;
     padding: 0.5rem;
     border: var(--border2);
     border-radius: 6px;
-}
-
-.friends {
 }
 
 .chatspage {
@@ -237,25 +239,40 @@ textarea::-webkit-scrollbar-track {
     padding: 1rem 0 3rem 0;
 }
 
-.chatspage .friend{
+.chatspage .chat {
     margin: 1rem;
     background: var(--blue);
     border: var(--border1);
     padding: 1rem;
-    font-size: 2rem;
     border: var(--blue) solid 1px;
     border-radius: 10px;
+}
+
+.chatspage .friendname {
+    font-size: 2rem;
+}
+
+.chatspage .lasttime {
+    float: right;
+    position: relative;
+    bottom: 2rem;
+}
+
+.chatspage .lastmessage {
+    padding-top: 1rem;
 }
 
 .chatspage .title {
     font-size: 3rem;
     text-align: center;
 }
-.search{
+
+.search {
     margin: 2rem auto;
     width: 20rem;
 }
-.search input{
+
+.search input {
     padding: 0.5rem;
     font-size: 1.5rem;
     width: 20rem;
@@ -266,6 +283,6 @@ textarea::-webkit-scrollbar-track {
     background: var(--cyan);
 }
 
-.search input:focus{
+.search input:focus {
     outline: none;
 }

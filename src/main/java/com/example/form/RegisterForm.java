@@ -6,7 +6,7 @@ public class RegisterForm {
     @NotNull
     @NotBlank
     @Size(min = 3, max = 30)
-    @Pattern(regexp = "[a-zA-Z0-9_-]+", message = "логин может содержать только латинские буквы, цифры и символы подчеркивания")
+    @Pattern(regexp = "[a-z0-9_-]+", message = "логин может содержать только маленькие латинские буквы, цифры и символы подчеркивания")
     private String login;
 
     @NotNull

@@ -1,7 +1,7 @@
 <#import "commons.ftlh" as c>
 
 <@c.page>
-    <div class="chat">
+    <div class="chatbox">
         <div class="to">
             ${currentUser.name!}
         </div>

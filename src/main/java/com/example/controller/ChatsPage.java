@@ -22,7 +22,7 @@ public class ChatsPage extends Page {
         if (user == null) {
             return "redirect:/enter";
         }
-        model.addAttribute("friends", messageService.findFriends(user));
+        model.addAttribute("chats", messageService.findChats(user));
         return "ChatsPage";
     }
 }
