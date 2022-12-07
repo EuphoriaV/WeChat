@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface MessageRepository extends JpaRepository<Message, Long> {
-    @Query(value = "SELECT * FROM `message` WHERE (to_id=?1 and from_id=?2) or (to_id=?2 and from_id=?1)ORDER BY creation_time DESC", nativeQuery = true)
+    @Query(value = "SELECT * FROM `message` WHERE (to_id=?1 and from_id=?2) or (to_id=?2 and from_id=?1)ORDER BY creation_time", nativeQuery = true)
     List<Message> findMessages(long a, long b);
 
     // По какой-то причине hibernate не может кастануть Object[] к User, поэтому пришлось делать это вручную

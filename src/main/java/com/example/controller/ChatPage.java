@@ -58,6 +58,6 @@ public class ChatPage extends Page {
             return "ChatPage";
         }
         messageService.sendMessage(messageForm, from, to);
-        return "redirect:/chat/" + login;
+        return "redirect:/chat/{login}";
     }
 }

@@ -232,7 +232,7 @@ textarea::-webkit-scrollbar-track {
     border-radius: 30px;
     width: 50rem;
     margin: 2rem auto;
-    padding: 0.6rem 0 0.001rem 0;
+    padding: 0.6rem 0 0.01rem 0;
 }
 
 .chatspage .title {
