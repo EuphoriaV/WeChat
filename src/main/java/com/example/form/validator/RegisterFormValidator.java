@@ -1,10 +1,10 @@
 package com.example.form.validator;
 
+import com.example.form.RegisterForm;
 import com.example.service.UserService;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
-import com.example.form.RegisterForm;
 
 @Component
 public class RegisterFormValidator implements Validator {

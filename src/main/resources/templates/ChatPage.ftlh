@@ -6,25 +6,31 @@
             ${currentUser.name!}
         </div>
         <div class="messages">
-            <#list messages as message>
-                <div class="message">
-                    <#if user.id==message.from.id>
-                        <div class="my">
-                            ${message.text}
-                            <div class="date">
-                                ${message.creationTime}
-                            </div>
-                        </div>
-                    <#else>
-                        <div class="his">
-                            ${message.text}
-                            <div class="date">
-                                ${message.creationTime}
-                            </div>
-                        </div>
-                    </#if>
+            <#if messages?size == 0>
+                <div class="nomessages">
+                    У вас пока нет сообщений
                 </div>
-            </#list>
+            <#else>
+                <#list messages as message>
+                    <div class="message">
+                        <#if user.id==message.from.id>
+                            <div class="my">
+                                ${message.text}
+                                <div class="date">
+                                    ${message.creationTime}
+                                </div>
+                            </div>
+                        <#else>
+                            <div class="his">
+                                ${message.text}
+                                <div class="date">
+                                    ${message.creationTime}
+                                </div>
+                            </div>
+                        </#if>
+                    </div>
+                </#list>
+            </#if>
         </div>
         <div class="send">
             <form method="post">

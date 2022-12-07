@@ -4,7 +4,7 @@
     --dark-blue: rgb(8, 33, 58);
     --blue: rgb(34, 36, 103);
     color: white;
-    background: var(--blue);
+    background: var(--light-blue);
     --border1: var(--dark-blue) solid 10px;
     --border2: var(--cyan) solid 2px;
     font-family: "Verdana", sans-serif;
@@ -41,7 +41,7 @@ header .buttons a {
     text-decoration: none;
     background: var(--cyan);
     font: 1.5rem bold;
-    margin: 2rem 1rem  0 1rem;
+    margin: 2rem 1rem 0 1rem;
     font-family: "Verdana", sans-serif;
     border: var(--border2);
     padding: 0.5rem;
@@ -55,7 +55,7 @@ header .buttons a {
 main .enterform {
     border: var(--border1);
     background: var(--dark-blue);
-    border-radius: 20px;
+    border-radius: 30px;
     margin: 2rem auto;
     width: 30rem;
 }
@@ -68,9 +68,9 @@ main .enterform .title {
 }
 
 main .enterform .box {
-    background: var(--blue);
+    background: var(--light-blue);
     margin: 0 0.4rem 0.4rem 0.4rem;
-    border: var(--blue) 2px solid;
+    border: var(--light-blue) 2px solid;
     border-radius: 10px;
 }
 
@@ -127,12 +127,12 @@ main .enterform input[type=submit] {
 }
 
 .messages {
-    border-radius: 20px;
+    border-radius: 30px;
     display: flex;
     flex-direction: column-reverse;
     overflow-y: scroll;
     height: calc(80vh - 10rem);
-    background: var(--blue);
+    background: var(--light-blue);
 }
 
 .to {
@@ -212,11 +212,11 @@ main .enterform input[type=submit] {
 }
 
 ::-webkit-scrollbar {
-    width: 6px;
+    width: 5px;
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--blue);
+    background: var(--light-blue);
 }
 
 textarea::-webkit-scrollbar-track {
@@ -243,18 +243,18 @@ textarea::-webkit-scrollbar-track {
 
 .chatspage .chat {
     margin: 0 1rem 1rem 1rem;
-    background: var(--blue);
+    background: var(--light-blue);
     border: var(--border1);
     padding: 1rem;
-    border: var(--blue) solid 1px;
+    border: var(--light-blue) solid 1px;
     border-radius: 10px;
 }
 
 .chatspage .friendname {
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
-.chatspage a {
+main a {
     color: white;
     text-decoration: none;
 }
@@ -290,4 +290,30 @@ textarea::-webkit-scrollbar-track {
 
 .search input:focus {
     outline: none;
+}
+
+.results {
+    width: 50rem;
+    margin: 2rem auto;
+    border: var(--border1);
+    border-radius: 30px;
+    background: var(--dark-blue);
+}
+
+.results .text {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.results .user1 {
+    background: var(--light-blue);
+    padding: 1rem;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    margin: 1rem 0.5rem 0.5rem 0.5rem;
+}
+
+.nomessages {
+    font-size: 1.5rem;
+    margin: auto;
 }

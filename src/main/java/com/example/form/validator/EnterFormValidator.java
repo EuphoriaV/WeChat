@@ -1,10 +1,10 @@
 package com.example.form.validator;
 
+import com.example.form.EnterForm;
+import com.example.service.UserService;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
-import com.example.form.EnterForm;
-import com.example.service.UserService;
 
 @Component
 public class EnterFormValidator implements Validator {

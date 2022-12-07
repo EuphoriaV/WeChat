@@ -5,6 +5,8 @@ import com.example.form.RegisterForm;
 import com.example.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserService {
     private final UserRepository userRepository;
@@ -32,5 +34,9 @@ public class UserService {
 
     public User findByLogin(String login) {
         return userRepository.findByLogin(login);
+    }
+
+    public List<User> findAllUsers(String str) {
+        return userRepository.findAllUsers(str.trim());
     }
 }

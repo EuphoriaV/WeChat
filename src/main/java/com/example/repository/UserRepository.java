@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 public interface UserRepository extends JpaRepository<User, Long> {
     boolean existsByLogin(String login);
@@ -19,4 +20,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
     User findByLoginAndPassword(String login, String password);
 
     User findByLogin(String login);
+
+    @Query(value = "SELECT * FROM user WHERE (LOWER(login) LIKE %?1%) OR (LOWER(name) LIKE %?1%)", nativeQuery = true)
+    List<User> findAllUsers(String str);
 }
