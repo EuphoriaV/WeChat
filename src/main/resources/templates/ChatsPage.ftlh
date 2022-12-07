@@ -27,8 +27,8 @@
                         </div>
                         <div class="lastmessage">
                             ${chat.message.from.name}:
-                            <#if chat.message.text?length gt 40>
-                                ${chat.message.text?substring(0,40)}...
+                            <#if chat.message.text?length gt 35>
+                                ${chat.message.text?substring(0,35)}...
                             <#else>
                                 ${chat.message.text}
                             </#if>
