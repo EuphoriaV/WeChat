@@ -50,7 +50,7 @@ public class ChatPage extends Page {
         }
         User to = userService.findByLogin(login);
         if (to == null) {
-            return "redirect:/";
+            return "redirect:/chats";
         }
         model.addAttribute("currentUser", to);
         model.addAttribute("messages", messageService.findMessages(from, to));

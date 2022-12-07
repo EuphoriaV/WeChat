@@ -32,8 +32,7 @@ public class RegisterPage extends Page {
     }
 
     @GetMapping("/register")
-    public String getRegister(Model model, HttpSession session) {
-        unsetUser(session);
+    public String getRegister(Model model) {
         model.addAttribute("registerForm", new RegisterForm());
         return "RegisterPage";
     }

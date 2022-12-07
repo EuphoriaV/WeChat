@@ -31,8 +31,7 @@ public class EnterPage extends Page {
     }
 
     @GetMapping("/enter")
-    public String getEnter(Model model, HttpSession session) {
-        unsetUser(session);
+    public String getEnter(Model model) {
         model.addAttribute("enterForm", new EnterForm());
         return "EnterPage";
     }
