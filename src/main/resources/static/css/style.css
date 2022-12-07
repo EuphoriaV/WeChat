@@ -16,7 +16,7 @@ body {
 }
 
 header {
-    height: 7rem;
+    height: 5rem;
     width: 100%;
     display: inline-block;
     background: var(--dark-blue);
@@ -24,29 +24,24 @@ header {
 
 header img {
     display: inline;
-    height: 5rem;
-    margin: 1rem 3rem 1rem 10rem;
+    height: 3rem;
+    margin: 1rem 1rem 1rem 10rem;
 }
 
 header label {
     display: inline;
-    font-size: 3rem;
+    font-size: 2rem;
     position: relative;
-    bottom: 2.5rem;
+    bottom: 1.8rem;
     font-family: "Verdana", sans-serif;
-}
-
-.chats a {
-    text-decoration: none;
-    color: white;
 }
 
 header .buttons a {
     color: var(--dark-blue);
     text-decoration: none;
     background: var(--cyan);
-    font: 1rem bold;
-    margin: 1rem;
+    font: 1.5rem bold;
+    margin: 2rem 1rem  0 1rem;
     font-family: "Verdana", sans-serif;
     border: var(--border2);
     padding: 0.5rem;
@@ -61,12 +56,12 @@ main .enterform {
     border: var(--border1);
     background: var(--dark-blue);
     border-radius: 20px;
-    margin: 5rem auto;
+    margin: 2rem auto;
     width: 30rem;
 }
 
 main .enterform .title {
-    padding: 0.6rem;
+    text-align: center;
     font-size: 2rem;
     font-weight: bold;
     border-bottom: var(--border1);
@@ -74,12 +69,13 @@ main .enterform .title {
 
 main .enterform .box {
     background: var(--blue);
+    margin: 0 0.4rem 0.4rem 0.4rem;
     border: var(--blue) 2px solid;
     border-radius: 10px;
 }
 
 main .enterform .field {
-    padding: 4rem 5rem 1rem 5rem;
+    padding: 3rem 5rem 1rem 5rem;
 }
 
 main .enterform .name {
@@ -90,7 +86,7 @@ main .enterform .name {
 
 main .enterform .inp {
     padding: 0.5rem;
-    border-radius: 6px;
+    border-radius: 10px;
     background: var(--cyan);
     border: 0;
 }
@@ -110,11 +106,11 @@ main .enterform input[type=submit] {
     background: var(--cyan);
     color: var(--dark-blue);
     outline: none;
-    margin: 2rem 12.5rem;
+    margin: 2rem 11.5rem;
     font-size: 1.5rem;
     padding: 0.5rem;
     border: var(--border2);
-    border-radius: 6px;
+    border-radius: 10px;
 }
 
 .error {
@@ -127,6 +123,7 @@ main .enterform input[type=submit] {
     width: 50rem;
     margin: 2rem auto;
     background: var(--dark-blue);
+    padding: 0 0.4rem;
 }
 
 .messages {
@@ -134,14 +131,14 @@ main .enterform input[type=submit] {
     display: flex;
     flex-direction: column-reverse;
     overflow-y: scroll;
-    height: 30rem;
+    height: calc(80vh - 10rem);
     background: var(--blue);
 }
 
 .to {
-    height: 3rem;
     text-align: center;
     font-size: 2rem;
+    padding-bottom: 0.6rem;
 }
 
 .my {
@@ -159,7 +156,6 @@ main .enterform input[type=submit] {
 .his {
     margin: 1rem;
     background: var(--dark-blue);
-    color: white;
     border-radius: 10px;
     padding: 0.5rem;
     font-size: 1.2rem;
@@ -199,6 +195,17 @@ main .enterform input[type=submit] {
     resize: none;
 }
 
+.send input[type=submit] {
+    background: var(--cyan);
+    color: var(--dark-blue);
+    outline: none;
+    margin: 1rem 3rem;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border: var(--border2);
+    border-radius: 10px;
+}
+
 ::-webkit-scrollbar-track {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -220,27 +227,22 @@ textarea::-webkit-scrollbar-track {
     background: var(--dark-blue);
 }
 
-.send input[type=submit] {
-    background: var(--cyan);
-    color: var(--dark-blue);
-    outline: none;
-    margin: 1rem 3rem;
-    font-size: 1.5rem;
-    padding: 0.5rem;
-    border: var(--border2);
-    border-radius: 6px;
-}
-
 .chatspage {
     background: var(--dark-blue);
     border-radius: 30px;
     width: 50rem;
     margin: 2rem auto;
-    padding: 1rem 0 3rem 0;
+    padding: 0.6rem 0 0.001rem 0;
+}
+
+.chatspage .title {
+    font-size: 2rem;
+    text-align: center;
+    padding-bottom: 0.6rem;
 }
 
 .chatspage .chat {
-    margin: 1rem;
+    margin: 0 1rem 1rem 1rem;
     background: var(--blue);
     border: var(--border1);
     padding: 1rem;
@@ -250,6 +252,11 @@ textarea::-webkit-scrollbar-track {
 
 .chatspage .friendname {
     font-size: 2rem;
+}
+
+.chatspage a {
+    color: white;
+    text-decoration: none;
 }
 
 .chatspage .lasttime {
@@ -262,11 +269,6 @@ textarea::-webkit-scrollbar-track {
     padding-top: 1rem;
 }
 
-.chatspage .title {
-    font-size: 3rem;
-    text-align: center;
-}
-
 .search {
     margin: 2rem auto;
     width: 20rem;
@@ -274,13 +276,16 @@ textarea::-webkit-scrollbar-track {
 
 .search input {
     padding: 0.5rem;
+    padding-left: 2.5rem;
     font-size: 1.5rem;
     width: 20rem;
     height: 2rem;
     outline: none;
     border: 0;
     border-radius: 10px;
-    background: var(--cyan);
+    background: url(..//img/search.png) no-repeat var(--cyan);
+    background-size: 1.5rem;
+    background-position: 0.5rem 0.75rem;
 }
 
 .search input:focus {

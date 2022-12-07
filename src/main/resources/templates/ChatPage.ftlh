@@ -7,21 +7,23 @@
         </div>
         <div class="messages">
             <#list messages as message>
-                <#if user.id==message.from.id>
-                    <div class="my">
-                        ${message.text}
-                        <div class="date">
-                            ${message.creationTime}
+                <div class="message">
+                    <#if user.id==message.from.id>
+                        <div class="my">
+                            ${message.text}
+                            <div class="date">
+                                ${message.creationTime}
+                            </div>
                         </div>
-                    </div>
-                <#else>
-                    <div class="his">
-                        ${message.text}
-                        <div class="date">
-                            ${message.creationTime}
+                    <#else>
+                        <div class="his">
+                            ${message.text}
+                            <div class="date">
+                                ${message.creationTime}
+                            </div>
                         </div>
-                    </div>
-                </#if>
+                    </#if>
+                </div>
             </#list>
         </div>
         <div class="send">
