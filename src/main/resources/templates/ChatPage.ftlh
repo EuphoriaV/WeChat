@@ -36,7 +36,7 @@
         <div class="send">
             <form method="post">
                 <div class="sendbox">
-                    <textarea name="text" placeholder="Сообщение">${messageForm.text!}</textarea>
+                    <textarea name="text" placeholder="Сообщение"></textarea>
                     <@c.error "messageForm.text"/>
                 </div>
                 <input type="submit">
@@ -65,9 +65,8 @@
                             "</div>" +
                             "</div>");
                     });
-
                 }
             })
-        }, 1000)
+        }, 500)
     </script>
 </@c.page>
