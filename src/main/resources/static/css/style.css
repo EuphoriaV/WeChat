@@ -1,0 +1,322 @@
+:root {
+    --cyan: rgb(14, 183, 249);
+    --light-blue: rgb(1, 120, 189);
+    --dark-blue: rgb(8, 33, 58);
+    --blue: rgb(34, 36, 103);
+    color: white;
+    background: var(--light-blue);
+    --border1: var(--dark-blue) solid 10px;
+    --border2: var(--cyan) solid 2px;
+    font-family: "Verdana", sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    height: 5rem;
+    width: 100%;
+    display: inline-block;
+    background: var(--dark-blue);
+}
+
+header img {
+    display: inline;
+    height: 3rem;
+    margin: 1rem 1rem 1rem 10rem;
+}
+
+header label {
+    display: inline;
+    font-size: 2rem;
+    font-weight: bold;
+    position: relative;
+    bottom: 1.8rem;
+    font-family: "Verdana", sans-serif;
+}
+
+header .buttons a {
+    color: var(--dark-blue);
+    text-decoration: none;
+    background: var(--cyan);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 2rem 1rem 0 1rem;
+    font-family: "Verdana", sans-serif;
+    border: var(--border2);
+    padding: 0.5rem;
+    border-radius: 10px;
+    float: right;
+    display: inline;
+    position: relative;
+    bottom: 6.5rem;
+}
+
+main .enterform {
+    border: var(--border1);
+    background: var(--dark-blue);
+    border-radius: 30px;
+    margin: 2rem auto;
+    width: 30rem;
+}
+
+main .enterform .title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    border-bottom: var(--border1);
+}
+
+main .enterform .box {
+    background: var(--light-blue);
+    margin: 0 0.4rem 0.4rem 0.4rem;
+    border: var(--light-blue) 2px solid;
+    border-radius: 10px;
+}
+
+main .enterform .field {
+    padding: 3rem 5rem 1rem 5rem;
+}
+
+main .enterform .name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+main .enterform .inp {
+    padding: 0.5rem;
+    border-radius: 10px;
+    background: var(--cyan);
+    border: 0;
+}
+
+main .enterform .inp input {
+    font-size: 1.5rem;
+    width: 90%;
+    background: var(--cyan);
+    border: 0;
+}
+
+main .enterform input:focus {
+    outline: none;
+}
+
+main .enterform input[type=submit] {
+    background: var(--cyan);
+    color: var(--dark-blue);
+    outline: none;
+    margin: 2rem 11.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 0.5rem;
+    border: var(--border2);
+    border-radius: 10px;
+}
+
+.error {
+    color: red;
+}
+
+.chatbox {
+    border: var(--border1);
+    border-radius: 30px;
+    width: 50rem;
+    margin: 2rem auto;
+    background: var(--dark-blue);
+    padding: 0 0.4rem;
+}
+
+.messages {
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column-reverse;
+    overflow-y: scroll;
+    height: calc(80vh - 10rem);
+    background: var(--light-blue);
+}
+
+.to {
+    text-align: center;
+    font-size: 2rem;
+    padding-bottom: 0.6rem;
+}
+
+.my {
+    margin: 1rem 1rem 1rem auto;
+    background: var(--cyan);
+    color: white;
+    border-radius: 10px;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    width: max-content;
+    max-width: 20rem;
+    word-break: break-word;
+}
+
+.his {
+    margin: 1rem;
+    background: var(--dark-blue);
+    border-radius: 10px;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    width: max-content;
+    max-width: 20rem;
+    word-break: break-word;
+}
+
+.date {
+    margin-top: 0.5rem;
+    font-size: 0.7rem;
+    text-align: right;
+}
+
+.send {
+    height: 7rem;
+}
+
+.sendbox {
+    float: left;
+}
+
+.sendbox .error {
+    margin-left: 1rem;
+}
+
+.send textarea {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    color: white;
+    border: none;
+    background: var(--dark-blue);
+    width: 30rem;
+    height: 3rem;
+    outline: none;
+    resize: none;
+}
+
+.send input[type=submit] {
+    background: var(--cyan);
+    color: var(--dark-blue);
+    outline: none;
+    margin: 1rem 3rem;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border: var(--border2);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--light-blue);
+}
+
+textarea::-webkit-scrollbar-track {
+    background: var(--dark-blue);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--dark-blue);
+}
+
+.chatspage {
+    background: var(--dark-blue);
+    border-radius: 30px;
+    width: 50rem;
+    margin: 2rem auto;
+    padding: 0.6rem 0 0.01rem 0;
+}
+
+.chatspage .title {
+    font-size: 2rem;
+    text-align: center;
+    padding-bottom: 0.6rem;
+}
+
+.chatspage .chat {
+    margin: 0 1rem 1rem 1rem;
+    background: var(--light-blue);
+    border: var(--border1);
+    padding: 1rem;
+    border: var(--light-blue) solid 1px;
+    border-radius: 10px;
+}
+
+.chatspage .friendname {
+    font-size: 1.5rem;
+}
+
+main a {
+    color: white;
+    text-decoration: none;
+}
+
+.chatspage .lasttime {
+    float: right;
+    position: relative;
+    bottom: 2rem;
+}
+
+.chatspage .lastmessage {
+    padding-top: 1rem;
+}
+
+.search {
+    margin: 2rem auto;
+    width: 20rem;
+}
+
+.search input {
+    padding: 0.5rem;
+    padding-left: 2.5rem;
+    font-size: 1.5rem;
+    width: 20rem;
+    height: 2rem;
+    outline: none;
+    border: 0;
+    border-radius: 10px;
+    background: url(..//img/search.png) no-repeat var(--cyan);
+    background-size: 1.5rem;
+    background-position: 0.5rem 0.75rem;
+}
+
+.search input:focus {
+    outline: none;
+}
+
+.results {
+    width: 50rem;
+    margin: 2rem auto;
+    border: var(--border1);
+    border-radius: 30px;
+    background: var(--dark-blue);
+}
+
+.results .text {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.results .user1 {
+    background: var(--light-blue);
+    padding: 1rem;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    margin: 1rem 0.5rem 0.5rem 0.5rem;
+}
+
+.nomessages {
+    font-size: 1.5rem;
+    margin: auto;
+}
