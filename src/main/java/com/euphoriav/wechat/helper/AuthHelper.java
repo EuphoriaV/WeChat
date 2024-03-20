@@ -15,7 +15,7 @@ public class AuthHelper {
 
     private final SecurityContextRepository securityContextRepository;
 
-    public void setAuthentication(User user, HttpServletRequest request, HttpServletResponse response) {
+    public void saveAuthentication(User user, HttpServletRequest request, HttpServletResponse response) {
         var auth = new UsernamePasswordAuthenticationToken(user, null, user.getAuthorities());
         SecurityContextHolder.getContext().setAuthentication(auth);
         securityContextRepository.saveContext(SecurityContextHolder.getContext(), request, response);

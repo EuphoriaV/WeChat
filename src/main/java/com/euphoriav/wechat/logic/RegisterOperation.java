@@ -28,6 +28,6 @@ public class RegisterOperation {
 
         userRepository.save(user);
         log.info("user was registered {}", user);
-        authHelper.setAuthentication(user, request, response);
+        authHelper.saveAuthentication(user, request, response);
     }
 }
