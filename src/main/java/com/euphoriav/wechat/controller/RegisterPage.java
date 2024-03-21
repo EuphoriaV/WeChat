@@ -3,7 +3,7 @@ package com.euphoriav.wechat.controller;
 import com.euphoriav.wechat.dto.RegisterRequest;
 import com.euphoriav.wechat.helper.BindingResultHelper;
 import com.euphoriav.wechat.helper.validator.RegisterRequestValidator;
-import com.euphoriav.wechat.logic.RegisterOperation;
+import com.euphoriav.wechat.service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.*;
 public class RegisterPage extends AbstractPage {
 
     private final BindingResultHelper bindingResultHelper;
-    private final RegisterOperation registerOperation;
+    private final UserService userService;
     private final RegisterRequestValidator registerCustomEditor;
 
     @InitBinder("registerRequest")
@@ -40,7 +40,7 @@ public class RegisterPage extends AbstractPage {
             bindingResultHelper.saveErrorsToModel(bindingResult, model);
             return "RegisterPage";
         }
-        registerOperation.activate(registerRequest, request, response);
+        userService.register(registerRequest, request, response);
         return "redirect:/chats";
     }
 }

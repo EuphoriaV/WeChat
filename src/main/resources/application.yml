@@ -2,7 +2,7 @@ spring:
   application:
     name: wechat
   datasource:
-    url: jdbc:postgresql://localhost:5432/wechat
+    url: jdbc:postgresql://${WECHAT_HOST}:5432/wechat
     username: EuphoriaV
     password: ${WECHAT_PASSWORD}
   jpa:

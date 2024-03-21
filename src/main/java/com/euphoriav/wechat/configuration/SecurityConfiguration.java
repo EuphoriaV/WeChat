@@ -29,7 +29,7 @@ public class SecurityConfiguration {
                         .anyRequest().authenticated())
                 .formLogin(login -> login
                         .loginPage("/login")
-                        .defaultSuccessUrl("/chats")
+                        .defaultSuccessUrl("/chats", true)
                         .permitAll())
                 .build();
     }
