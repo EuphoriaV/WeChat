@@ -13,7 +13,7 @@ public class LoginPage extends AbstractPage {
     }
 
     @ModelAttribute("error")
-    public String getError(HttpServletRequest request) {
+    public String error(HttpServletRequest request) {
         return request.getParameter("error");
     }
 }

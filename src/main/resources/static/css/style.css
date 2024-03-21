@@ -204,6 +204,7 @@ main .enterform input[type=submit] {
     outline: none;
     margin: 1rem 3rem;
     font-size: 1.5rem;
+    font-weight: 600;
     padding: 0.5rem;
     border: var(--border2);
     border-radius: 10px;

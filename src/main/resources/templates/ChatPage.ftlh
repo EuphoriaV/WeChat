@@ -2,9 +2,8 @@
 
 <@c.page>
     <div class="chatbox">
-        <div class="login" hidden="hidden">${currentUser.login}</div>
         <div class="to">
-            ${currentUser.name}
+            ${to.name}
         </div>
         <div class="messages">
             <div class="messagesbox">
@@ -16,7 +15,7 @@
                                 ${message.text}
                             </div>
                             <div class="date">
-                                ${message.creationTime}
+                                ${message.createdAt}
                             </div>
                         </div>
                     <#else>
@@ -26,7 +25,7 @@
                                 ${message.text}
                             </div>
                             <div class="date">
-                                ${message.creationTime}
+                                ${message.createdAt}
                             </div>
                         </div>
                     </#if>
@@ -37,7 +36,7 @@
             <form method="post">
                 <div class="sendbox">
                     <textarea name="text" placeholder="Сообщение"></textarea>
-                    <@c.error "messageForm.text"/>
+                    <@c.error "text"/>
                 </div>
                 <input type="submit">
             </form>
@@ -45,24 +44,25 @@
     </div>
     <script>
         setInterval(function () {
-            const login = $(".login").text();
+            const login = "${to.login}"
             $.ajax({
                 type: "GET",
-                uri: "/chat/" + login,
+                uri: "/chats/" + login,
                 success: function (response) {
                     $(".messagesbox").text("");
                     $(response).find(".message").each(function (index, value) {
                         const date = $(value).find(".date").text();
                         const text = $(value).find(".messagetext").text();
-                        const whom = $(value).find("label").text();
-                        $(".messagesbox").append("<div class='message " + whom + "'>" +
-                            "<label hidden='hidden'>" + whom + "</label>" +
-                            "<div class='messagetext'>" +
-                            text +
-                            "</div>" +
-                            "<div class='date'>" +
-                            date +
-                            "</div>" +
+                        const whose = $(value).find("label").text();
+                        $(".messagesbox").append(
+                            "<div class='message " + whose + "'>" +
+                                "<label hidden='hidden'>" + whose + "</label>" +
+                                "<div class='messagetext'>" +
+                                    text +
+                                "</div>" +
+                                "<div class='date'>" +
+                                    date +
+                                "</div>" +
                             "</div>");
                     });
                 }

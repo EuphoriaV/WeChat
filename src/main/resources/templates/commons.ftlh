@@ -8,7 +8,7 @@
         <title>WeChat</title>
         <link rel="icon" type="image/png" href="<@spring.url '/img/logo.png'/>"/>
         <link rel="stylesheet" type="text/css" href="<@spring.url '/css/style.css'/>">
-        <#--        <script src="<@spring.url '/js/jquery-3.6.1.min.js'/>"></script>-->
+        <script src="<@spring.url '/js/jquery-3.6.1.min.js'/>"></script>
     </head>
     <body>
     <header>
