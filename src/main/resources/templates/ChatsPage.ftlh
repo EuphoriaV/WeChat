@@ -38,5 +38,4 @@
             </#list>
         </#if>
     </div>
-    <script type="text/javascript" src="https://livejs.com/live.js"></script>
 </@c.page>
