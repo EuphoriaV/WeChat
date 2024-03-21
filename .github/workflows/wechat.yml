@@ -29,4 +29,4 @@ jobs:
       - name: Liquibase update
         run: |
           chmod +x ./mvnw
-          ./mvnw liquibase:update -Dliquibase.password=${{ secrets.WECHAT_PASSWORD }}
+          ./mvnw liquibase:update -Dliquibase.url=${{ secrets.WECHAT_URL }} -Dliquibase.username=${{ secrets.WECHAT_USERNAME }} -Dliquibase.password=${{ secrets.WECHAT_PASSWORD }}
