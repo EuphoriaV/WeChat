@@ -1,5 +1,6 @@
 package com.euphoriav.wechat.service;
 
+import com.euphoriav.wechat.dto.Chat;
 import com.euphoriav.wechat.dto.SendMessageRequest;
 import com.euphoriav.wechat.entity.Message;
 import com.euphoriav.wechat.entity.User;
@@ -8,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
+import java.util.Comparator;
 import java.util.List;
 
 @Slf4j
@@ -29,5 +31,12 @@ public class MessageService {
 
         messageRepository.save(message);
         log.info("message was sent {}", message);
+    }
+
+    public List<Chat> getChats(User user) {
+        return messageRepository.getLastMessages(user.getId()).stream()
+                .sorted(Comparator.comparing(Message::getCreatedAt).reversed())
+                .map(message -> new Chat(message.getFrom().equals(user) ? message.getTo() : message.getFrom(), message))
+                .toList();
     }
 }

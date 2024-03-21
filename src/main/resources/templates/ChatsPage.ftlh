@@ -17,13 +17,13 @@
                 Чаты
             </div>
             <#list chats as chat>
-                <a href="<@spring.url '/chat/${chat.user.login}'/>">
+                <a href="<@spring.url '/chats/${chat.user.login}'/>">
                     <div class="chat">
                         <div class="friendname">
                             ${chat.user.name}
                         </div>
                         <div class="lasttime">
-                            ${chat.message.creationTime}
+                            ${chat.message.createdAtPretty()}
                         </div>
                         <div class="lastmessage">
                             ${chat.message.from.name}:
@@ -38,5 +38,4 @@
             </#list>
         </#if>
     </div>
-    <script type="text/javascript" src="https://livejs.com/live.js"></script>
 </@c.page>

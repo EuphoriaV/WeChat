@@ -24,7 +24,9 @@ public class ChatsPage extends AbstractPage {
     private final BindingResultHelper bindingResultHelper;
 
     @GetMapping
-    public String getChats() {
+    public String getChats(@AuthenticationPrincipal UserDetails userDetails, Model model) {
+        var user = user(userDetails);
+        model.addAttribute("chats", messageService.getChats(user));
         return "ChatsPage";
     }
 
