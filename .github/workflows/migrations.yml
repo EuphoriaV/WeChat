@@ -1,5 +1,5 @@
 name: migrations
-on: workflow_dispatch
+on: push
 jobs:
   migrations:
     runs-on: ubuntu-latest
