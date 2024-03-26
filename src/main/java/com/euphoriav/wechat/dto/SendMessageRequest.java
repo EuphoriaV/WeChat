@@ -10,6 +10,6 @@ public class SendMessageRequest {
 
     @NotNull
     @NotBlank
-    @Size(min = 1, max = 1024)
+    @Size(min = 1, max = 1000)
     private final String text;
 }

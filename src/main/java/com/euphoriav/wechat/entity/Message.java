@@ -34,7 +34,7 @@ public class Message {
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
-    public String createdAtPretty() {
+    public String getPrettyCreatedAt() {
         return FORMATTER.format(createdAt);
     }
 }
