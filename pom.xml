@@ -71,12 +71,9 @@
                 <artifactId>liquibase-maven-plugin</artifactId>
                 <version>4.26.0</version>
                 <configuration>
-                    <url>jdbc:postgresql://euphoriav.keenetic.pro:5432/wechat</url>
-                    <username>EuphoriaV</username>
                     <changeLogFile>src/main/resources/db.changelog/changelog.xml</changeLogFile>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-
 </project>
