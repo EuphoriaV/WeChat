@@ -1,5 +1,0 @@
-Выполнение миграций:
-./mvnw liquibase:update -Dliquibase.url=jdbc:postgresql://localhost:5432/wechat -Dliquibase.username=EuphoriaV -Dliquibase.password=1234
-
-Запуск docker compose:
-docker compose up -d
