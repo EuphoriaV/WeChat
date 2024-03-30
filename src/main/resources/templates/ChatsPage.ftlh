@@ -23,7 +23,7 @@
                             ${chat.user.name}
                         </div>
                         <div class="lasttime">
-                            ${chat.message.createdAtPretty()}
+                            ${chat.message.getPrettyCreatedAt()}
                         </div>
                         <div class="lastmessage">
                             ${chat.message.from.name}:

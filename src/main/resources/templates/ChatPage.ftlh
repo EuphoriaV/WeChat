@@ -15,7 +15,7 @@
                                 ${message.text}
                             </div>
                             <div class="date">
-                                ${message.createdAtPretty()}
+                                ${message.getPrettyCreatedAt()}
                             </div>
                         </div>
                     <#else>
@@ -25,7 +25,7 @@
                                 ${message.text}
                             </div>
                             <div class="date">
-                                ${message.createdAtPretty()}
+                                ${message.getPrettyCreatedAt()}
                             </div>
                         </div>
                     </#if>
