@@ -14,6 +14,10 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.URLEncoder;
+
+import static java.nio.charset.StandardCharsets.UTF_8;
+
 @Controller
 @RequestMapping("/chats")
 @RequiredArgsConstructor
@@ -26,8 +30,15 @@ public class ChatsPage extends AbstractPage {
     @GetMapping
     public String getChats(@AuthenticationPrincipal UserDetails userDetails, Model model) {
         var user = user(userDetails);
-        model.addAttribute("chats", messageService.getChats(user));
+        var chats = messageService.getChats(user);
+        model.addAttribute("chats", chats);
         return "ChatsPage";
+    }
+
+    @PostMapping
+    public String search(@RequestParam("search") String search) {
+        var encodedSearchParam = URLEncoder.encode(search, UTF_8);
+        return String.format("redirect:/users?search=%s", encodedSearchParam);
     }
 
     @GetMapping("/{login}")
