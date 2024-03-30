@@ -70,4 +70,13 @@ public class UserServiceTest {
         assertEquals(request.getLogin(), savedUser.getLogin());
         assertEquals(request.getName(), savedUser.getName());
     }
+
+    @Test
+    public void getUsersBySubstrTest() {
+        var substr = "euphoriav";
+
+        userService.getUsersBySubstr(substr);
+
+        verify(userRepository).getUsersBySubstr(String.format("%%%s%%", substr));
+    }
 }
