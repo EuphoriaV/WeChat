@@ -3,7 +3,7 @@ version: '3'
 services:
   db:
     container_name: db
-    image: postgres:14
+    image: postgres:15
     environment:
       - POSTGRES_USER=EuphoriaV
       - POSTGRES_PASSWORD=1234
@@ -12,18 +12,28 @@ services:
       - postgres:/var/lib/postgresql/data/
     ports:
       - "5432:5432"
-    healthcheck:
-      test: [ "CMD-SHELL", "pg_isready", "-d", "wechat" ]
-      interval: 30s
-      timeout: 60s
-      retries: 5
+
+  liquibase:
+    container_name: liquibase
+    image: liquibase/liquibase:4.24
+    depends_on:
+      db:
+        condition: service_started
+    command:
+      - --changelog-file=changelog.xml
+      - --url=jdbc:postgresql://db:5432/wechat
+      - --username=EuphoriaV
+      - --password=1234
+      - update
+    volumes:
+      - ./src/main/resources/db.changelog:/liquibase/changelog
 
   wechat:
     container_name: wechat
     build: .
     depends_on:
-      db:
-        condition: service_healthy
+      liquibase:
+        condition: service_completed_successfully
     ports:
       - "8080:8080"
     environment:
