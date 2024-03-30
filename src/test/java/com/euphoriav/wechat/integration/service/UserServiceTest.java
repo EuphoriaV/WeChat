@@ -1,5 +1,7 @@
-package com.euphoriav.wechat.integration;
+package com.euphoriav.wechat.integration.service;
 
+import com.euphoriav.wechat.integration.AbstractIntegrationTest;
+import com.euphoriav.wechat.integration.TestHelper;
 import com.euphoriav.wechat.service.UserService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
