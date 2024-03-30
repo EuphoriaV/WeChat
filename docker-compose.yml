@@ -16,6 +16,7 @@ services:
   liquibase:
     container_name: liquibase
     image: liquibase/liquibase:4.24
+    restart: on-failure
     depends_on:
       db:
         condition: service_started
