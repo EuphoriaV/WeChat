@@ -7,18 +7,18 @@ import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
 import org.springframework.transaction.annotation.Transactional;
 import org.testcontainers.containers.PostgreSQLContainer;
-import org.testcontainers.junit.jupiter.Container;
-import org.testcontainers.junit.jupiter.Testcontainers;
 
 @Rollback
 @Transactional
-@Testcontainers
 @SpringBootTest
 @ActiveProfiles("test")
 public abstract class AbstractIntegrationTest {
 
-    @Container
     static PostgreSQLContainer<?> CONTAINER = new PostgreSQLContainer<>("postgres");
+
+    static {
+        CONTAINER.start();
+    }
 
     @DynamicPropertySource
     private static void configureDatabaseProperties(DynamicPropertyRegistry registry) {
