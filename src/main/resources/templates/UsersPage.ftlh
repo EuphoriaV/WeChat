@@ -12,7 +12,7 @@
                 Результаты по поиску: ${search}
             </div>
             <#list users as user1>
-                <a href="<@spring.url '/chat/${user1.login}'/>">
+                <a href="<@spring.url '/chats/${user1.login}'/>">
                     <div class="user1">
                         ${user1.name} (${user1.login})
                     </div>
