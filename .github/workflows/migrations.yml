@@ -1,0 +1,17 @@
+name: migrations
+on: workflow_dispatch
+jobs:
+  migrations:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+      - name: Liquibase update
+        run: |
+          chmod +x ./mvnw
+          ./mvnw liquibase:update -Dliquibase.url=${{ secrets.WECHAT_URL }} -Dliquibase.username=${{ secrets.WECHAT_USERNAME }} -Dliquibase.password=${{ secrets.WECHAT_PASSWORD }}

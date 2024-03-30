@@ -1,3 +1,10 @@
 spring:
   application:
     name: wechat
+  datasource:
+    url: jdbc:postgresql://${WECHAT_HOST}:5432/wechat
+    username: ${WECHAT_USERNAME}
+    password: ${WECHAT_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: none
