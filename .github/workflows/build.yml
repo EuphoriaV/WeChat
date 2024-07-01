@@ -16,7 +16,9 @@ jobs:
           cache: maven
 
       - name: Run tests
-        run: ./mvnw test
+        run: |
+          chmod +x ./mvn
+          ./mvnw test
 
       - name: Build image
         run: docker build -t ghcr.io/euphoriav/wechat:latest .
