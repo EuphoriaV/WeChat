@@ -41,7 +41,7 @@ docker compose up -d
 
 Проект собирается с помощью Maven. Также с помощью Docker собирается образ сервиса, и вместе с базой данных и миграциями Liquibase разворачивается с помощью Docker Compose.
 
-Также в проекте настроены два workflow в Github Actions: сборка проекта и выполнение миграций Liquibase.
+Также в проекте настроены workflow в Github Actions: сборка образа, публикация в GitHub Container Registry и выполнение миграций Liquibase.
 
 ## Примеры использования
 ![image](https://github.com/EuphoriaV/WeChat/assets/78645533/3887601f-6717-4fa9-8dc4-9d7e02b5968c)
