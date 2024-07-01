@@ -1,9 +1,9 @@
 FROM openjdk:17-jdk-slim AS build
 WORKDIR /app
 COPY . .
-RUN ./mvnw -Dmaven.test.skip=true package
+RUN ./mvnw package
 
 FROM openjdk:17-jdk-slim
 WORKDIR /app
-COPY --from=build /app/target/*.jar ./wechat.jar
+COPY --from=build /app/target/wechat.jar ./
 CMD ["java", "-jar", "wechat.jar"]
